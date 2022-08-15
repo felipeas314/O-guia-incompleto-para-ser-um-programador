@@ -1,19 +1,19 @@
-# 1
+# 1. Faça um programa que calcule o comprimento de uma circunferencia
 
-# 2
+# 2. Faça um programa que calcule a área de uma circunferencia
 
-# 3
+# 3. Faça um programa que calcule a área de um tringulo retangulo
 
-# 4
+# 4. 
 
-# 5
+# 5.
 
-# 6
+# 6.
 
-# 7
+# 7.
 
-# 8
+# 8.
 
-# 9
+# 9.
 
-# 10
+# 10.
