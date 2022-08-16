@@ -1,9 +1,5 @@
 # **O guia incompleto para ser um programador**
 
-# A jornada do Héroi
-
-O caminho não será fácil, isso eu prometo a você, mas o resultado será como criar seu próprio universo através de códigos
-
 ## Parte 1
 
 1. Entender o que é a computação
