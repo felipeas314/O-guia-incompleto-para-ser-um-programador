@@ -10,7 +10,7 @@
 
 # 6.
 
-# 7. Faça um programa que calcule a área de uma circunferencia
+# 7. Faça  um programa que calcule a área de uma circunferencia
 
 # 8.
 

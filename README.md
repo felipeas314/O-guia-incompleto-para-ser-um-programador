@@ -1,5 +1,7 @@
 # **O guia incompleto para ser um programador**
 
+# **COmo tudo está organizado***
+
 ## Parte 1
 
 1. Entender o que é a computação
