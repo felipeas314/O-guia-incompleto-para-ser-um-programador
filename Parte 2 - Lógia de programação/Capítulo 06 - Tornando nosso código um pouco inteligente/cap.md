@@ -1,7 +1,10 @@
-# Primeiras linhas de código
+# **Tornando nosso código um pouco inteligente**
 
 # 1. Necessidade
 
-# 5. Diálogo entre jedi e padawan
 
-# 10. Conclusão
+# 2. O if da vida
+
+# 3. SE e ENTÃO
+
+# 4. Conclusão
