@@ -17,17 +17,51 @@ Em Python, variáveis são usadas para armazenar dados. É como ter uma caixinha
 
 Em Python, não precisamos declarar o tipo de uma variável antes de usá-la. Você só precisa dar um nome a ela e armazenar algum valor.
 
+Exemplo de como dar um nome a uma variável e armazenar um valor nela
+
+```
+# Guardando um número na variável
+idade = 25
+
+# Guardando uma palavra (string)
+nome = "Felipe"
+
+# Guardando uma lista de coisas legais
+itens = ["laptop", "mouse", "caneca de café"]
+```
+
+Fácil, né? Aqui não tem aquele negócio de int ou float na frente (como em outras linguagens). Python resolve isso pra gente
+
+**Regras para nomes de variaveis**
+
+Python é muito flexível com nomes, mas tem algumas regrinhas:
+
+1. O nome da variável não pode começar com números. Não tente chamar sua variável de 2pac.
+2. Use apenas letras, números e underline. Nada de @, &, ou # no nome da sua variável.
+3. Nomes com letras maiúsculas e 
+4. minúsculas fazem diferença. nome e Nome são variáveis diferentes!
+
+**Exemplo 001**
+
+Agora você vai criar seu primeiro programinha em python, primeiro você tem que criar um arquivo chamado cap01-example-01.py, depois disso escrever o seguinte código no arquivo: 
+
+```
+# Guardando um número na variável
+nome = "Felipe Alexandre"
+
+# Guardando uma palavra (string)
+printf("Bem vindo ao mundo da programação"+nome)
+```
+
+Agora vamos executar, para executar basta rodar o seguinte comando no terminal, **python3 cap01-example-01.py**
+
 # 3. Tipos de dados
+Agora que já sabemos o que são variáveis, vamos ver que tipos de coisas podemos guardar nelas. Abaixo estão os tipos mais comuns:
 
-1. Numeric
-   Em algum momento da sua vida como programador você vai precisar utilizar números, imagine que você esteja fazendo uma loja online, você vai precisar somar o valor de todos os produtos que o cliente deseja comprar para dizer o valor final da compra, é aqui que o tipo Numeric entra, mas vamos pensar nos tipos de números que existem, os números podem ser: naturais, inteiros, reais e etc. Go trabalha com vários tipos de números como em outras linguagens e isso é um ponto importante que nos podemos deixar passar dispercebido.
-   
-2. Booleans
-   Digamos que você deseja armazenar uma valor em um variável chamada "Maior de idade" e ele deve apenas dizer se uma pessoa é ou não maior de idade, a variável deve dizer apenas se aquilo é verdade ou mentira, é nesse momento que nos vamos 
-   usar variáveis do tipo Boolean, Booleans só podem assumir dois valores, verdade ou mentira (true ou false)
-
-   var maiorDeIdage bool;
-   var pessoaMuitoBonita = true
++ Números inteiros: como 10, 1000 ou -42
++ Números com ponto flutuante (ou decimais): como 3.14 ou -0.001
++ Strings (ou cadeias de caracteres): como "olá mundo" ou "python é demais"
++ Booleanos: **True** ou **False**, perfeito para quando a resposta é simples (sim ou não).
 
 # 4. Operadores aritméticos
 

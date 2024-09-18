@@ -6,10 +6,12 @@ Computadores conseguem fazer calculos que nos humanos nem conseguimos imaginar, 
 
 Mas como pedir para um computador fazer determinada tarefa? (Como detalhar a rota de um cometa) Será que ele vai entender Português? Inglês? Alemão? 
 
-# 2. Vamos falar sobre a linguagem Go
+# 2. Vamos falar sobre a linguagem Python
 
 # 3. Instalação
 
-# 4. Fazendo nosso primeiro teste
+# 4. Ferramenta que vai salvar nossa vida 
 
-# 5. Conclusão
+# 5. Fazendo nosso primeiro teste
+
+# 6. Conclusão
