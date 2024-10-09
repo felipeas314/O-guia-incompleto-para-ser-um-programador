@@ -63,6 +63,7 @@ Agora que já sabemos o que são variáveis, vamos ver que tipos de coisas podem
 + Strings (ou cadeias de caracteres): como "olá mundo" ou "python é demais"
 + Booleanos: **True** ou **False**, perfeito para quando a resposta é simples (sim ou não).
 
+
 # 4. Operadores aritméticos
 
 # 6. Fluxo de entrada e saída

@@ -9,9 +9,10 @@ Na programação, as estruturas condicionais servem exatamente para isso: dar in
 
 Imagine que você está construindo um jogo simples em que o personagem precisa decidir o que fazer quando encontrar um baú:
 
-Se o baú estiver trancado, o personagem precisa procurar uma chave.
-Se o baú estiver destrancado, ele abre e coleta os itens.
-Se o baú estiver vazio, ele segue em frente.
+* Se o baú estiver trancado, o personagem precisa procurar uma chave.
+* Se o baú estiver destrancado, ele abre e coleta os itens.
+* Se o baú estiver vazio, ele segue em frente.
+  
 Agora, sem as condicionais, como o personagem tomaria essas decisões? Ele sempre tentaria abrir o baú, sem saber se está trancado, ou ficaria preso na mesma ação. Com as condicionais, o programa “pensa” e escolhe o que fazer em cada situação.
 
 # 2. O if(Se) da vida
@@ -27,6 +28,33 @@ else:
     print("Você ainda é menor de idade.")
 
 ```
+
+Aqui, o operador de comparação >= está verificando se a idade é maior ou igual a 18. Se a condição for verdadeira, o Python executa o primeiro bloco. Se for falsa, ele pula para o bloco else.
+
+**Por que Python é Simples com Condicionais?**
+Python é conhecido por sua simplicidade e legibilidade, e isso é claramente visto nas condicionais. Em muitas linguagens, você precisa de chaves {} ou parênteses para delimitar blocos de código, enquanto no Python, a indentação faz esse trabalho. Isso torna o código mais limpo e fácil de entender.
+
+**A sintaxe básica de uma condicional no Python é:**
+```
+if condição:
+    # Código executado se a condição for verdadeira
+else:
+    # Código executado se a condição for falsa
+```
+
+
+**OBSERVAÇÃO: A indentação é obrigatória e o Python não vai entender seu código corretamente sem ela.**
+
+# 3. Operadores de comparação lóogica
+Os operadores de comparação e lógicos são os principais aliados das condicionais. Vamos ver os mais comuns:
+
+* '==: Igual a'
+* '!=: Diferente de'
+* '>: Maior que'
+* '<: Menor que'
+* '>=: Maior ou igual a'
+* '<=: Menor ou igual a'
+
 # 3. SE e ENTÃO
 
 # 4. Conclusão
