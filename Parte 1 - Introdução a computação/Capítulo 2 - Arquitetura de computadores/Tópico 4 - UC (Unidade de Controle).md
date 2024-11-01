@@ -1,4 +1,4 @@
-# Arquitetura de Computadores - Parte 3: Unidade de Controle (UC)
+# Unidade de Controle (UC)
 
 A **Unidade de Controle** (UC) é uma das partes mais importantes da CPU. Ela é responsável por coordenar todas as operações dentro da CPU, garantindo que cada componente trabalhe em sincronia para executar as instruções dos programas. A UC não executa operações matemáticas ou lógicas diretamente – essas são tarefas da ULA (Unidade Lógica e Aritmética) – mas controla o fluxo e a execução de instruções dentro da CPU e entre os outros componentes do sistema.
 
