@@ -316,3 +316,187 @@ print(palavras_filtradas)  # Saída: ['Python', 'linguagem', 'programação', 'i
 
 Com as ferramentas certas e uma abordagem metódica, Python permite que você manipule tanto dados estruturados quanto não estruturados de maneira eficaz. Compreender essas técnicas amplia suas habilidades para trabalhar com uma variedade de formatos de dados e preparar projetos mais robustos e completos.
 
+## Tratamento de Exceções Durante a Leitura/Escrita de Arquivos
+
+Quando você trabalha com leitura e escrita de arquivos em Python, podem ocorrer diversos tipos de erros, como arquivos inexistentes, permissões insuficientes ou falhas de disco. Para garantir que seu programa lide bem com esses cenários, é fundamental entender como usar o tratamento de exceções.
+
+### Por Que Tratar Exceções?
+
+Tratar exceções permite que seu código seja mais robusto e preparado para lidar com situações inesperadas sem quebrar a execução do programa. Isso melhora a experiência do usuário e facilita a depuração.
+
+### Sintaxe Básica do `try...except`
+
+O bloco `try...except` é usado para capturar e lidar com exceções em Python.
+
+**Estrutura**:
+```python
+try:
+    # Código que pode gerar uma exceção
+    with open('dados.txt', 'r') as arquivo:
+        conteudo = arquivo.read()
+except FileNotFoundError:
+    print("Erro: O arquivo não foi encontrado.")
+except PermissionError:
+    print("Erro: Permissão negada para acessar o arquivo.")
+except Exception as e:
+    print(f"Ocorreu um erro inesperado: {e}")
+```
+
+**Explicação**:
+- **`try`**: O código dentro deste bloco é executado normalmente, mas se ocorrer uma exceção, a execução é interrompida e passa para o bloco `except`.
+- **`except`**: Captura a exceção e executa o código de tratamento.
+- **`Exception`**: Captura qualquer exceção que não tenha sido especificada em outros blocos `except`. O objeto `e` contém informações sobre a exceção.
+
+### Tratamento de Exceções na Escrita de Arquivos
+
+Quando você escreve em arquivos, também é importante lidar com exceções para evitar problemas de escrita ou de disco.
+
+**Exemplo de Tratamento de Exceções na Escrita**:
+```python
+try:
+    with open('saida.txt', 'w') as arquivo:
+        arquivo.write("Escrevendo dados importantes no arquivo.")
+except IOError:
+    print("Erro: Problema ao escrever no arquivo.")
+except Exception as e:
+    print(f"Erro inesperado: {e}")
+```
+
+**Explicação**:
+- **`IOError`**: Captura erros relacionados à leitura ou escrita em arquivos.
+- **Outras exceções** podem ser tratadas com o bloco `except Exception` para cobrir situações imprevistas.
+
+### Uso de `finally`
+
+O bloco `finally` é usado para garantir que uma ação seja executada independentemente de uma exceção ter ocorrido ou não. Ele é útil para fechar recursos ou realizar tarefas de limpeza.
+
+**Exemplo de Uso do `finally`**:
+```python
+try:
+    arquivo = open('dados.txt', 'r')
+    conteudo = arquivo.read()
+except FileNotFoundError:
+    print("Erro: Arquivo não encontrado.")
+finally:
+    if 'arquivo' in locals() and not arquivo.closed:
+        arquivo.close()
+        print("Arquivo fechado com segurança.")
+```
+
+**Explicação**:
+- **`finally`**: O bloco é executado sempre, seja após o `try` ou `except`.
+- **`arquivo.close()`**: Garante que o arquivo seja fechado mesmo que ocorra uma exceção durante a leitura.
+
+### Boas Práticas para Tratamento de Exceções
+- **Especifique Exceções**: Use exceções específicas em vez de capturar `Exception` para um tratamento mais detalhado e preciso.
+- **Mantenha a Simplicidade**: Não sobrecarregue o código com tratamentos complexos que podem mascarar erros.
+- **Log de Erros**: Considere registrar erros em um log para facilitar a depuração e monitoramento do sistema.
+
+**Exemplo de Registro de Erros**:
+```python
+try:
+    with open('dados_importantes.txt', 'r') as arquivo:
+        conteudo = arquivo.read()
+except FileNotFoundError as e:
+    with open('log_erros.txt', 'a') as log:
+        log.write(f"Erro: {e}\n")
+    print("Erro registrado no log.")
+```
+
+Com essas técnicas, você pode garantir que seu programa lide de forma segura e eficaz com erros relacionados à leitura e escrita de arquivos, tornando-o mais robusto e confiável.
+
+## Projetos Práticos: Sistema de Cadastro e Gerador de Relatórios
+
+Implementar projetos práticos é uma excelente forma de consolidar o conhecimento sobre manipulação de arquivos, tratamento de exceções e outras habilidades de programação. Neste tópico, vamos criar um sistema simples de cadastro e um gerador de relatórios em Python. Vamos abordar cada parte do código com explicações detalhadas.
+
+### Projeto 1: Sistema de Cadastro Simples
+
+O sistema de cadastro permitirá ao usuário inserir informações como nome, idade e e-mail, que serão salvas em um arquivo de texto.
+
+**Código do Sistema de Cadastro**:
+```python
+def cadastrar_usuario():
+    try:
+        with open('cadastros.txt', 'a') as arquivo:
+            nome = input("Digite o nome: ")
+            idade = input("Digite a idade: ")
+            email = input("Digite o e-mail: ")
+            
+            # Escreve as informações no arquivo
+            arquivo.write(f"Nome: {nome}, Idade: {idade}, E-mail: {email}\n")
+            print("Cadastro realizado com sucesso!")
+    except IOError:
+        print("Erro ao acessar o arquivo de cadastro. Verifique as permissões.")
+
+# Chamando a função para testar
+cadastrar_usuario()
+```
+
+**Explicação do Código**:
+- **`with open('cadastros.txt', 'a')`**: Abre o arquivo `cadastros.txt` em modo de adição (`'a'`). Se o arquivo não existir, ele será criado.
+- **`input()`**: Coleta dados do usuário para nome, idade e e-mail.
+- **`arquivo.write()`**: Escreve os dados formatados no arquivo, separando cada cadastro em uma nova linha.
+- **Tratamento de exceção (`except IOError`)**: Lida com erros de I/O (entrada/saída), como falta de permissão para gravar no arquivo.
+
+### Projeto 2: Gerador de Relatórios
+
+Este gerador de relatórios lerá um arquivo de dados e criará um resumo com as informações. Vamos criar um relatório simples que conte quantos cadastros existem e liste os nomes.
+
+**Código do Gerador de Relatórios**:
+```python
+def gerar_relatorio():
+    try:
+        with open('cadastros.txt', 'r') as arquivo:
+            cadastros = arquivo.readlines()
+            total_cadastros = len(cadastros)
+            print(f"Total de cadastros: {total_cadastros}\n")
+            print("Nomes cadastrados:")
+            
+            for cadastro in cadastros:
+                # Divide a string e extrai o nome
+                partes = cadastro.split(', ')
+                nome = partes[0].split(': ')[1]
+                print(f"- {nome}")
+    except FileNotFoundError:
+        print("Erro: O arquivo de cadastro não foi encontrado.")
+    except Exception as e:
+        print(f"Ocorreu um erro inesperado: {e}")
+
+# Chamando a função para gerar o relatório
+gerar_relatorio()
+```
+
+**Explicação do Código**:
+- **`with open('cadastros.txt', 'r')`**: Abre o arquivo `cadastros.txt` em modo de leitura.
+- **`arquivo.readlines()`**: Lê todas as linhas do arquivo e as armazena em uma lista.
+- **`len(cadastros)`**: Conta o total de cadastros (linhas) presentes no arquivo.
+- **`split()`**: Divide as linhas em partes para extrair o nome de cada cadastro.
+- **Tratamento de exceções (`FileNotFoundError`, `Exception`)**: Lida com casos em que o arquivo não existe ou outros erros imprevistos.
+
+### Teoria e Boas Práticas
+
+1. **Uso de `with open()`**:
+   - O uso da estrutura `with` é preferível para abrir arquivos, pois garante o fechamento automático do arquivo após a execução do bloco, evitando vazamento de recursos.
+
+2. **Tratamento de Exceções**:
+   - Capturar exceções específicas, como `FileNotFoundError` e `IOError`, torna o código mais robusto e fácil de depurar.
+
+3. **Formatos de Arquivo**:
+   - Usar um formato estruturado, como CSV, pode facilitar a leitura e a manipulação dos dados. O exemplo mostrado usa texto simples para manter a simplicidade.
+
+**Exemplo de Estrutura de Arquivo `cadastros.txt`**:
+```
+Nome: Alice, Idade: 30, E-mail: alice@example.com
+Nome: Bob, Idade: 25, E-mail: bob@example.com
+```
+
+### Possíveis Melhorias
+- **Adicionar validação de entrada**: Verificar se a idade é um número válido e se o e-mail possui um formato correto.
+- **Usar CSV para armazenamento**: Melhoraria a manipulação e a integração com outras ferramentas de análise.
+- **Interface gráfica**: Implementar uma interface para tornar o cadastro mais amigável.
+
+### Conclusão
+
+Projetos práticos como um sistema de cadastro e gerador de relatórios ajudam a aplicar conhecimentos de manipulação de arquivos, tratamento de exceções e formatação de dados. Esses exemplos são apenas o início, e há muito mais que pode ser explorado e ampliado conforme as necessidades do projeto.
+
+
