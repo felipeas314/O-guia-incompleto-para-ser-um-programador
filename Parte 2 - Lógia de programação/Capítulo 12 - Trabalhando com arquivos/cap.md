@@ -197,3 +197,122 @@ except IOError:
 
 Com essas técnicas, você pode criar, escrever e atualizar arquivos em Python de maneira eficiente e segura. No próximo passo, vamos explorar como construir projetos que aproveitem a manipulação de arquivos para aplicações mais robustas.
 
+## Manipulação de Dados Estruturados e Não Estruturados
+
+A manipulação de dados é uma parte crucial da programação e está presente em diversas aplicações do mundo real. Em Python, a abordagem para trabalhar com **dados estruturados** e **não estruturados** varia conforme a complexidade e o formato dos dados. Vamos explorar como lidar com esses tipos de dados de maneira eficiente.
+
+### O Que São Dados Estruturados e Não Estruturados?
+
+- **Dados Estruturados**: São organizados em um formato fixo e facilmente interpretável, como tabelas de bancos de dados, planilhas e arquivos CSV. Cada linha tem o mesmo formato, facilitando a análise e manipulação.
+- **Dados Não Estruturados**: Não seguem um formato ou modelo específico, como textos em linguagem natural, e-mails, arquivos de áudio e vídeo. Esses dados exigem técnicas de pré-processamento para torná-los analisáveis.
+
+### Manipulação de Dados Estruturados
+
+Python fornece várias bibliotecas para manipular dados estruturados de forma prática. Uma das mais comuns é a `pandas`.
+
+#### Instalando o `pandas`
+
+Antes de usar `pandas`, você precisa instalá-lo. Isso pode ser feito facilmente com o seguinte comando:
+```bash
+pip install pandas
+```
+
+**Explicação**:
+- **`pip install pandas`**: O `pip` é o gerenciador de pacotes do Python, e este comando baixa e instala a biblioteca `pandas`.
+
+#### Usando `pandas` para Manipular Dados Estruturados
+
+A biblioteca `pandas` é amplamente utilizada para manipulação de dados tabulares. Ela permite carregar, analisar e modificar grandes volumes de dados de maneira eficiente.
+
+**Exemplo de Leitura de CSV com `pandas`**:
+```python
+import pandas as pd
+
+# Carrega o arquivo CSV em um DataFrame
+dados = pd.read_csv('dados.csv')
+print(dados.head())  # Exibe as primeiras linhas do DataFrame
+```
+
+**Principais Operações com DataFrames**:
+- **Filtrar Linhas**:
+```python
+dados_filtrados = dados[dados['Idade'] > 30]
+print(dados_filtrados)
+```
+- **Adicionar Colunas**:
+```python
+dados['Salario_Anual'] = dados['Salario_Mensal'] * 12
+```
+- **Salvar um DataFrame Modificado em CSV**:
+```python
+dados.to_csv('dados_atualizados.csv', index=False)
+```
+
+### Manipulação de Dados Não Estruturados
+
+Trabalhar com dados não estruturados pode ser mais desafiador, pois esses dados geralmente não têm um formato consistente. Python oferece bibliotecas como `re` (expressões regulares), `json`, e `nltk` para ajudar nesse processo.
+
+#### Trabalhando com Arquivos de Texto
+
+Quando se trabalha com grandes blocos de texto, técnicas de manipulação de strings e expressões regulares são essenciais.
+
+**Exemplo de Manipulação com Expressões Regulares**:
+```python
+import re
+
+texto = "O número de telefone é (11) 98765-4321 e o e-mail é exemplo@dominio.com."
+# Extrai o número de telefone
+telefone = re.search(r'\(\d{2}\) \d{5}-\d{4}', texto)
+print(telefone.group())  # Saída: (11) 98765-4321
+```
+
+#### Trabalhando com JSON
+
+Dados em formato JSON (JavaScript Object Notation) são comuns em APIs e armazenam dados de forma semi-estruturada.
+
+**Exemplo de Leitura e Escrita de JSON**:
+```python
+import json
+
+# Leitura de um arquivo JSON
+with open('dados.json', 'r') as arquivo:
+    dados_json = json.load(arquivo)
+    print(dados_json)
+
+# Escrita de dados em JSON
+dados_para_salvar = {"nome": "Carlos", "idade": 28, "cidade": "Curitiba"}
+with open('novo_dados.json', 'w') as arquivo:
+    json.dump(dados_para_salvar, arquivo, indent=4)
+```
+
+### Pré-Processamento de Dados Não Estruturados
+
+Antes de realizar análises complexas em dados não estruturados, é necessário limpá-los e transformá-los em um formato mais estruturado. Técnicas comuns incluem:
+- **Tokenização**: Separar texto em palavras ou frases.
+- **Remoção de Stop Words**: Remover palavras comuns que não contribuem para a análise (ex.: "o", "de", "em").
+- **Normalização**: Transformar texto em um formato uniforme (ex.: conversão para letras minúsculas).
+
+**Exemplo com `nltk`**:
+```python
+import nltk
+from nltk.corpus import stopwords
+nltk.download('stopwords')
+nltk.download('punkt')
+
+texto = "Python é uma linguagem de programação incrível!"
+palavras = nltk.word_tokenize(texto)
+
+# Remoção de stop words
+palavras_filtradas = [palavra for palavra in palavras if palavra.lower() not in stopwords.words('portuguese')]
+print(palavras_filtradas)  # Saída: ['Python', 'linguagem', 'programação', 'incrível', '!']
+```
+
+### Desafios na Manipulação de Dados Não Estruturados
+- **Inconsistência**: Dados podem ter formatos variados, erros tipográficos e informações incompletas.
+- **Volume**: Grandes quantidades de dados não estruturados podem exigir processamento em lote ou técnicas de big data.
+- **Interpretação**: Transformar dados em insights úteis pode ser complexo e requer técnicas de mineração de dados ou machine learning.
+
+### Conclusão
+
+Com as ferramentas certas e uma abordagem metódica, Python permite que você manipule tanto dados estruturados quanto não estruturados de maneira eficaz. Compreender essas técnicas amplia suas habilidades para trabalhar com uma variedade de formatos de dados e preparar projetos mais robustos e completos.
+
