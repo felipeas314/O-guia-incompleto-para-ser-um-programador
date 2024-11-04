@@ -343,3 +343,145 @@ print(contador)  # Saída: 1
 
 Compreender o escopo ajuda a escrever funções que funcionam como blocos de construção independentes e previsíveis em seu código. Agora, você está pronto para criar funções mais robustas e bem estruturadas, sabendo onde e como as variáveis podem ser acessadas e modificadas.
 
+## 6. Desafios e Práticas
+
+Agora que você aprendeu os conceitos fundamentais sobre funções em Python, é hora de colocar esse conhecimento em prática! A seguir, temos alguns desafios projetados para testar suas habilidades de escrita de funções. Cada exercício vem com uma breve descrição e uma solução proposta.
+
+### Desafio 1: Função de Verificação de Número Primo
+**Descrição**: Escreva uma função que verifique se um número é primo.
+
+**Exemplo de Entrada**:
+```python
+numero = 7
+```
+**Exemplo de Saída**:
+```python
+True
+```
+
+**Solução Proposta**:
+```python
+def eh_primo(n):
+    if n <= 1:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+# Testando a função
+print(eh_primo(7))  # Saída: True
+print(eh_primo(10))  # Saída: False
+```
+
+### Desafio 2: Calculadora de Média Aritmética
+**Descrição**: Crie uma função que receba uma lista de números e retorne a média aritmética.
+
+**Exemplo de Entrada**:
+```python
+numeros = [10, 20, 30, 40, 50]
+```
+**Exemplo de Saída**:
+```python
+30.0
+```
+
+**Solução Proposta**:
+```python
+def calcular_media(lista):
+    if len(lista) == 0:
+        return 0
+    return sum(lista) / len(lista)
+
+# Testando a função
+print(calcular_media([10, 20, 30, 40, 50]))  # Saída: 30.0
+print(calcular_media([]))  # Saída: 0
+```
+
+### Desafio 3: Função de Contagem de Vogais
+**Descrição**: Escreva uma função que conte quantas vogais existem em uma string.
+
+**Exemplo de Entrada**:
+```python
+texto = "Programar é divertido!"
+```
+**Exemplo de Saída**:
+```python
+8
+```
+
+**Solução Proposta**:
+```python
+def contar_vogais(texto):
+    vogais = 'aeiouAEIOU'
+    contador = 0
+    for char in texto:
+        if char in vogais:
+            contador += 1
+    return contador
+
+# Testando a função
+print(contar_vogais("Programar é divertido!"))  # Saída: 8
+```
+
+### Desafio 4: Inverter String
+**Descrição**: Crie uma função que inverta uma string.
+
+**Exemplo de Entrada**:
+```python
+texto = "Python"
+```
+**Exemplo de Saída**:
+```python
+"nohtyP"
+```
+
+**Solução Proposta**:
+```python
+def inverter_string(s):
+    return s[::-1]
+
+# Testando a função
+print(inverter_string("Python"))  # Saída: nohtyP
+```
+
+### Desafio 5: Soma de Números Pares
+**Descrição**: Desenvolva uma função que receba uma lista de números e retorne a soma dos números pares.
+
+**Exemplo de Entrada**:
+```python
+numeros = [1, 2, 3, 4, 5, 6]
+```
+**Exemplo de Saída**:
+```python
+12
+```
+
+**Solução Proposta**:
+```python
+def soma_pares(lista):
+    soma = 0
+    for num in lista:
+        if num % 2 == 0:
+            soma += num
+    return soma
+
+# Testando a função
+print(soma_pares([1, 2, 3, 4, 5, 6]))  # Saída: 12
+```
+
+## Exercícios para Prática
+
+1. **Função de Contagem de Consoantes**: Escreva uma função que conte quantas consoantes existem em uma string.
+2. **Cálculo de Fatorial**: Crie uma função que calcule o fatorial de um número.
+3. **Função de Palíndromo**: Desenvolva uma função que verifique se uma palavra é um palíndromo.
+4. **Ordenação Simples**: Escreva uma função que receba uma lista de números e os retorne em ordem crescente.
+5. **Soma de Dígitos**: Crie uma função que receba um número inteiro e retorne a soma de seus dígitos.
+
+### Dicas para Resolver os Exercícios
+- **Leia o enunciado com atenção**: Entenda exatamente o que é pedido antes de começar a escrever o código.
+- **Teste com diferentes entradas**: Verifique se sua função funciona com entradas variadas, incluindo casos extremos.
+- **Mantenha o código limpo**: Use nomes de variáveis descritivos e comente partes importantes do seu código.
+
+Divirta-se codificando e continue praticando para se tornar cada vez melhor em Python!
+
