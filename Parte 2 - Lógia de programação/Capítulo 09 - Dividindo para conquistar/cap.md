@@ -277,3 +277,69 @@ print(verificar_numero_par(7))  # Saída: False
 
 Com o `return`, você pode construir funções que devolvem valores úteis, ajudando a modularizar e a tornar seu código mais eficiente e reutilizável.
 
+## 5. Escopo de Variáveis
+
+O escopo de variáveis em Python define onde as variáveis podem ser acessadas ou modificadas dentro do código. Entender o escopo é essencial para evitar erros e garantir que suas funções funcionem conforme esperado. Vamos explorar os conceitos de **escopo local** e **escopo global** e ver como eles impactam o comportamento das funções.
+
+### O Que é Escopo?
+
+O **escopo** refere-se à região do código onde uma variável é reconhecida. Em Python, as variáveis podem ter escopo **local** (dentro de funções) ou **global** (disponíveis em todo o programa).
+
+### Escopo Local
+
+Uma variável definida dentro de uma função tem **escopo local**, o que significa que ela só pode ser acessada dentro daquela função. Após a execução da função, a variável local é descartada.
+
+**Exemplo de Escopo Local**:
+
+```python
+def calcular_bonus(pontos):
+    bonus = pontos * 2  # 'bonus' é uma variável local
+    return bonus
+
+# Chamando a função
+resultado = calcular_bonus(10)
+print(resultado)  # Saída: 20
+
+# print(bonus)  # Isso causará um erro, pois 'bonus' não é acessível fora da função.
+```
+
+### Escopo Global
+
+Uma variável definida fora de qualquer função tem **escopo global** e pode ser acessada e modificada em qualquer lugar do programa, incluindo dentro das funções.
+
+**Exemplo de Escopo Global**:
+
+```python
+pontuacao = 50  # Variável global
+
+def exibir_pontuacao():
+    print(f"A pontuação atual é: {pontuacao}")
+
+exibir_pontuacao()  # Saída: A pontuação atual é: 50
+```
+
+### Modificando Variáveis Globais Dentro de Funções
+
+Para modificar uma variável global dentro de uma função, você deve usar a palavra-chave `global`. No entanto, essa prática deve ser usada com cautela, pois pode tornar o código mais difícil de entender e manter.
+
+**Exemplo com `global`**:
+
+```python
+contador = 0  # Variável global
+
+def incrementar_contador():
+    global contador
+    contador += 1  # Modifica a variável global
+
+incrementar_contador()
+print(contador)  # Saída: 1
+```
+
+### Boas Práticas com Escopo
+
+- **Prefira Variáveis Locais**: Elas são mais seguras e evitam efeitos colaterais indesejados.
+- **Use `global` com Moderação**: Modificar variáveis globais pode levar a bugs difíceis de rastrear e dificultar a leitura do código.
+- **Nomes Claros**: Certifique-se de usar nomes de variáveis claros e específicos para evitar colisões de nomes entre variáveis locais e globais.
+
+Compreender o escopo ajuda a escrever funções que funcionam como blocos de construção independentes e previsíveis em seu código. Agora, você está pronto para criar funções mais robustas e bem estruturadas, sabendo onde e como as variáveis podem ser acessadas e modificadas.
+
