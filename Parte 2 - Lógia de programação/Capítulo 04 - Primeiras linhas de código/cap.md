@@ -1,11 +1,13 @@
 # Necessidade
-Calculos dificeis estão sendo pedidos pelo seu professor e você não está conseguindo resolve-los todos de cabeça, então surge a brilhante ideia de escrever um programinha de computador que vai realizar todo o trabalho por você. Mas você pensa o seguinte: "Para escrever esse programa eu vou ter que dizer para eles vários valores e ele tem que armazenar essses valores em algum local, e as vezes esses valores serão números inteiros e outras vezes números reais. Nesse primeiro capítulo iremos abordar exatamente as variáveis, elas serão a porta de entrada para o nosso mundo de programador, colocaremos valores nelas e depois iremos manipular esses valores, esse variáveis não ficam armazenadas no limbo, elas ficam na memória do nosso computador (Memória essa que é bem melhor que a nossa humana) que estudamos na parte 1 desse amado guia.
+Calculos dificeis estão sendo pedidos pelo seu professor e você não está conseguindo resolve-los todos de cabeça, então surge a brilhante ideia de escrever um programinha de computador que vai realizar todo o trabalho por você. Mas você pensa o seguinte: "Para escrever esse programa eu vou ter que dizer para ele vários valores e ele tem que armazenar essses valores em algum local, e as vezes esses valores serão números inteiros e outras vezes números reais. Nesse primeiro capítulo iremos abordar exatamente as variáveis, elas serão a porta de entrada para o nosso mundo de programador, colocaremos valores nelas e depois iremos manipular esses valores, essas variáveis não ficam armazenadas no limbo, elas ficam na memória do nosso computador (Memória essa que é bem melhor que a nossa humana) que estudamos na parte 1 desse amado guia incompleto.
    
-# Variáveis em python - O Baú do tesouro
+# Variáveis em Go - O Baú do tesouro
 
-Variáveis são como caixinhas onde podemos guardar informações. E o melhor? Você pode dar um nome criativo a essas caixinhas! Desde que não seja algo maluco como **v@riável** (Python não gosta muito de nomes complicados 😅).
+Variáveis são como baús onde podemos guardar informações valiosas! E o mais legal? Podemos dar um nome a esses baús, desde que seja algo claro e compreensível (nada de nomes estranhos como v@riável 😅).
 
-Você já imaginou que programar é como estar em uma aventura de RPG? As variáveis são como o inventário do personagem: você guarda seus itens e usa quando precisar. Assim como você não deixaria o inventário do jogo desorganizado, também não queremos bagunçar o código, certo? Vamos lá!
+Se você já jogou RPG, imagine que as variáveis são como o inventário do seu personagem: você armazena poções, armas e moedas para usar quando precisar. Em Go, fazemos o mesmo, só que com números, textos e outros tipos de dados.
+
+Assim como ninguém gosta de um inventário bagunçado, também queremos que nosso código fique organizado e fácil de entender. Então, vamos abrir o baú e aprender a usar variáveis em Go! 🚀
 
 **O que são variáveis?**
 
